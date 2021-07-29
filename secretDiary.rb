@@ -3,6 +3,7 @@ class SecretDiary
 
 def initialize
   @lock = true
+  @entries = []
 end
 
 def lock
@@ -14,11 +15,13 @@ def unlock
 end
 
 
-def add_entry
- @lock == true ? 'locked' : 'unlocked'
+def add_entry(entry)
+ @lock == true ? 'locked' : @entries << entry
 end
 
-
+def get_entries
+  @entries
+end
 
 
 end
