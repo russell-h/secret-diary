@@ -25,4 +25,12 @@ RSpec.describe SecretDiary do
     expect(diary.add_entry('test')).to eq ['test']
   end
 
+  it "gets an entry" do
+    diary = SecretDiary.new
+    diary.unlock
+    diary.add_entry('test')
+    diary.add_entry('test and test')
+    expect(diary.get_entries).to eq ['test','test and test']
+  end
+
 end
