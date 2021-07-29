@@ -1,16 +1,24 @@
 class SecretDiary
 
 
-def lock
-  true
+def initialize
+  @lock = true
 end
+
+def lock
+  @lock = true
+end
+
+def unlock
+   @lock = false 
+end
+
 
 def add_entry
-  false
+ @lock == true ? 'locked' : 'unlocked'
 end
 
-def get_entries
-  false
-end
+
+
 
 end
